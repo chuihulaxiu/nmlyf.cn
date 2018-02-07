@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>网站建设中..</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+    </head>
+    <body background="images/bg1.jpg" >
+        
+        
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <embed src="music/世外桃源.mp3" autostart="ture" controls="pausebutton" loop=1 width="0" height="0" type=""></embed>
+                    <div class="modal fade" id="mydialog" data-backdrop="static">
+                        <div class="modal-dialog ">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                                    
+                                    <div class="modal-title h4">
+                                        这是一条善意的提醒
+                                    </div>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="h4">
+                                        网站建设中,敬请期待....
+                                        
+                                    </div>
+                                    <div class="text-center h3 text-danger ">
+                                        先带上耳机也是个不错的选择!
+                                    </div>
+                                    <div class="modal-footer">
+                                        <span class="btn btn-primary" id="btnok">
+                                            确定
+                                        </span>
+                                        <span class="btn btn-danger" data-dismiss="modal">取消</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+        $(function(){
+        $("#mydialog").modal("show");
+        $("#btnok").click(function(){
+        
+        $("#mydialog").modal("hide");
+        });
+        $("#btnShow").click(function(){
+        $("#mydialog").modal("show");
+        });
+        });
+        </script>
+    </body>
+</html>

@@ -6,67 +6,22 @@
         <title>首页</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
     </head>
-    <body>
+    <body background="images/bg1.jpg">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-xs-4">
-                    
-                </div>
-                <div class="col-xs-4">
-                    <div class="pull-left">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <div class="panel-title text-center">
-                                    欢迎光临倪明的网站
-                                </div>
-                            </div>
-                            <div class="panel-body">
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <span class="input-group-addon">
-                                            <i class="glyphicon glyphicon-user"></i>
-                                        </span>
-                                        <input type="text" class="form-control" placeholder="请输入您访问的名字,并点击确定按钮进入主页面">
-                                        <span class="input-group-addon">
-                                            <i class="glyphicon glyphicon-ok"></i>
-                                        </span>
-                                    </div>
-                                </div>
-                                
-                                
-                            </div>
-                            <div class="panel-footer text-right">
-                                <span class="btn btn-danger" id="btnShow">确定</span>
-                                <div class="modal fade" id="mydialog" data-backdrop="static">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-                                                
-                                                <div class="modal-title text-left">
-                                                    欢迎
-                                                </div>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="h1 text-center">
-                                                    欢迎登录倪明的网站
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <span class="btn btn-primary" id="btnok">
-                                                        确定
-                                                    </span>
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <span class="btn btn-danger">取消</span>
-                            </div>
+                
+                <div class="col-xs-12 ">
+                    <div class="text-">
+                        <P class="lead text-center text-success">
+                            Welcome to my Web!      
+                        </P>
+                        
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-danger progress-bar-striped" id="Progress"  style="width: 0%;">
+                            <span id="pspan"></span>
                         </div>
                     </div>
-
-
                     <div class="text-center">
                         <span ng-bind="$root.icp" class="ng-binding">
                             
@@ -74,9 +29,7 @@
                         <a href="http://www.miitbeian.gov.cn">湘ICP备18000072号-1</a>
                     </div>
                 </div>
-                <div class="col-xs-4">
-                    
-                </div>
+                
             </div>
             
         </div>
@@ -86,5 +39,23 @@
         
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min."></script>
+        <script type="text/javascript">
+        $(function () {
+        var p=0;//进度变量
+        var $p=$("#Progress");
+        var timer = setInterval(function(){
+        p++;
+        if(p>100){
+        clearInterval(timer);
+        $p.fadeOut(2000,function(){
+        location="bs01.html";
+        });
+        return;
+        }
+        $p.css("width",p+"%");
+        $("#pspan").html("Loading..."+p+"%");
+        },100);
+        });
+        </script>
     </body>
 </html>
